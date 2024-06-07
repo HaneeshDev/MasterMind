@@ -39,7 +39,7 @@ def check_code(guess, real_code):
     for color in real_code:
         if color not in color_counts:
             color_counts[color] = 0
-        color_counts += 1
+        color_counts[color] += 1
 
     for guess_color, real_color in zip(guess,real_code):
         if guess_color == real_color:
@@ -54,7 +54,7 @@ def check_code(guess, real_code):
     return correct_pos, incorrect_pos
 
 
-def game(correct_pos, incorrect_pos):
+def game():
 
     print(f"Welcome to mastermind, you have {TRIES} to guess the code...")
     print("The vaild colors are ", *COLORS)
